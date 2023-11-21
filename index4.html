@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro para Niñeros Universitarios</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('https://okdiario.com/img/2015/05/30/apps-para-encontrar-ninera-para-tus-hijos-655x368.jpg');
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #4B0082;
+            text-align: center;
+        }
+
+        form {
+            width: 50%;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.85); /* Color blanco con 80% de opacidad */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #4B0082;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        input[type="email"],
+        select,
+        textarea {
+            width: calc(100% - 22px); /* Se ajusta para evitar desbordamiento */
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        select {
+            appearance: none;
+        }
+
+        button[type="submit"],
+        button[type="button"] {
+            background-color: #4B0082;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+         button[type="submit"],
+        button[type="button"] {
+            background-color: #4B0082;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        button[type="submit"]:hover,
+        button[type="button"]:hover {
+            background-color: #800080;
+        }
+
+        #mapa {
+            display: none;
+            margin-top: 10px;
+            height: 300px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    input[type="file"] {
+        border: 2px solid #ccc;
+        border-radius: 5px;
+        padding: 8px;
+        font-size: 16px;
+        transition: border-color 0.3s ease;
+        background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoug9sA8CkTY1AWVh1T46t9WOvZgsNM5Z6ZxrYKrdep_iyTmAtXjP-_D4eZcWH_yAzVlE&usqp=CAU');
+        background-size: cover;
+        background-position: center;
+        color: transparent; /* Oculta el texto del botón de selección */
+    }
+
+    input[type="file"]:focus {
+        border-color: #4B0082;
+        outline: none;
+    }
+
+    input[type="file"]::-webkit-file-upload-button {
+        background-color: #4B0082;
+        color: white;
+        border: none;
+        padding: 8px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    input[type="file"]::-webkit-file-upload-button:hover {
+        background-color: #800080;
+    }
+    
+            input[type="file"] {
+        border: 2px solid #ccc;
+        border-radius: 5px;
+        padding: 8px;
+        font-size: 16px;
+        transition: border-color 0.3s ease;
+    }
+
+    input[type="file"]:focus {
+        border-color: #4B0082;
+        outline: none;
+    }
+
+    input[type="file"]::-webkit-file-upload-button {
+        background-color: #4B0082;
+        color: white;
+        border: none;
+        padding: 8px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    input[type="file"]::-webkit-file-upload-button:hover {
+        background-color: #800080;
+    }
+    </style>
+</head>
+
+<body>
+    <h1>Registro para Niñeros Universitarios</h1>
+    <form action="/submit-registration" method="post" enctype="multipart/form-data">
+        <label for="nombre">Nombre:</label>
+        
+        <input type="text" id="nombre" name="nombre" required>
+
+        <label for="apellido">Apellido:</label>
+        <input type="text" id="apellido" name="apellido" required>
+
+        <label for="edad">Edad:</label>
+        <input type="number" id="edad" name="edad" required>
+
+        <label for="genero">Género:</label>
+        <select id="genero" name="genero" required>
+            <option value="masculino">Masculino</option>
+            <option value="femenino">Femenino</option>
+            <option value="femenino">Terreneitor 3000</option>
+            <option value="femenino">Spider-Man</option>
+            <option value="femenino">Goku</option>
+            <option value="otro">Otros 39 tipos de gays</option>
+        </select>
+
+        <label for="direccion">Dirección:</label>
+        <div style="display: flex;">
+            <input type="text" id="direccion" name="direccion" required style="flex: 1;">
+            <button type="button" onclick="buscarDireccion()" style="margin-left: 10px;">Seleccionar en OpenStreetMap</button>
+        </div>
+
+        <div id="mapa"></div>
+
+        <input type="hidden" id="direccion_seleccionada" name="direccion_seleccionada">
+
+        <label for="contacto">Número de contacto:</label>
+        <input type="text" id="contacto" name="contacto" required>
+
+        <label for="email">Correo electrónico:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="universidad">Universidad en la que estudia:</label>
+        <input type="text" id="universidad" name="universidad" required>
+
+        <label for="campo_estudio">Campo de estudio:</label>
+        <input type="text" id="campo_estudio" name="campo_estudio" required>
+
+        <label for="experiencia">Años de experiencia en cuidado de niños:</label>
+        <input type="number" id="experiencia" name="experiencia" required>
+
+        <label for="foto">Fotografía del niñero:</label>
+        <input type="file" id="foto" name="foto">
+
+        <label for="habilidades">Habilidades especiales, certificaciones o cualquier información adicional relevante:</label>
+        <textarea id="habilidades" name="habilidades" rows="4" cols="50"></textarea>
+
+        <button type="submit">Enviar Registro</button>
+    </form>
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script>
+        var mymap = L.map('mapa').setView([51.505, -0.09], 13);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(mymap);
+
+        var marker;
+
+        function buscarDireccion() {
+            var input = document.getElementById('direccion');
+            var address = input.value;
+
+            var url = 'https://nominatim.openstreetmap.org/search?format=json&q=' + encodeURIComponent(address);
+
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.length > 0) {
+                        var lat = parseFloat(data[0].lat);
+                        var lon = parseFloat(data[0].lon);
+
+                        if (marker) {
+                            mymap.removeLayer(marker);
+                        }
+
+                        mymap.setView([lat, lon], 13);
+                        marker = L.marker([lat, lon]).addTo(mymap);
+
+                        document.getElementById('direccion_seleccionada').value = address;
+                    } else {
+                        alert('Dirección no encontrada en OpenStreetMap.');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error al buscar dirección:', error);
+                    alert('Ocurrió un error al buscar la dirección.');
+                });
+        }
+    </script>
+</body>
+
+</html>
