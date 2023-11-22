@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
 </head>
@@ -11,19 +12,28 @@
 <body >
   <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
-      <a class="navbar-brand"    href="#" style="font-size: 40px;font-weight: bold; margin-left: 50px;">BABYREST</a>
+      <a class="navbar-brand" href="#" style="font-size: 40px;font-weight: bold; margin-left: 50px;">BABYREST</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-    
-        
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a  class="nav-link "  href="#ABOUT" style="font-size: 25px;font-weight: bold; margin-left: 50px;">ABOUT US</a>
+          </li>
+          <li class="nav-item">
+            <a  class="nav-link" href="#REVIEWS" style="font-size: 25px;font-weight: bold; margin-left: 50px;">REVIEWS</a>
+          </li>
+          <li class="nav-item">
+            <a  class="nav-link "  href="#CONTACTANOS" style="font-size: 25px;font-weight: bold; margin-left: 50px;">CONTACTANOS</a>
+          </li>
+        </ul>
         <form class="d-flex" role="search">
           <a href="index2.html" class="btn btn-outline-success  btn-lg" style="margin-right: 60px;">INICIAR SESIÓN</a>
         </form>
       </div>
     </div>
   </nav>
-  
   
   <div id="carouselExampleIndicators" class="carousel slide">
     <div class="carousel-indicators">
@@ -36,22 +46,24 @@
       <div class="carousel-item active" style="max-height: 500px">
         <img src="img/feliz-nina-afroamericana-trepando-sobre-hombros-sonriente-madre-rubia-madre-e-hija-abrazandose.jpg" class="d-block w-100" alt="...">
         <div class="carousel-caption d-none d-md-block mb-5 fw-bolder">
-          <h5 class="fw-bolder" style="font-size: 80px; color:  #FFD700; font-family: Lobster ;">BIENVENIDOS A FINDY</h5>
+          <h5 class="fw-bolder" style="font-size: 80px; color:  #FFD700; font-family: Lobster ;">BIENVENIDOS </h5>
           <p style=" font-size: 25px; color:  #FFD700;font-family: Lobster;">"ENCUENTRA CUIDADORES CONFIABLES"</p>
         </div>
       </div>
     </div>
     
   </div>
+
+  <SECTion id="ABOUT">
 <div class="container-fluid mt-5" style="background-color: #1E90FF;">
   <h2 class=" text-center" style="color: #EDEDED; font-size: 50px;" >ABOUT US</h2>
   <div class="row">
     <div class="col-12 text-center fs-5 p-3" style="color: #EDEDED;">
-      "Somos FINDY: Conectando cuidadores confiables con padres para un cuidado excepcional."</div>
+      "Somos BABYREST: Conectando cuidadores confiables con padres para un cuidado excepcional."</div>
 
   </div>
 </div>
-
+</SECTion>
 
 
 
@@ -77,7 +89,31 @@
   </div>
 </div>
 
+<h2 style="text-align: center; background-color: #FFD700; padding: 15,10;font-size: 50px; "> REVIEWS</h2>
 
+<section id="REVIEWS">
+<div class="conteiner my-5">
+  <div class="row">
+    <div class="card mx-auto my-auto border-0 " style="width: 30rem;">
+      <img src="https://img.freepik.com/foto-gratis/chico-guapo-seguro-posando-contra-pared-blanca_176420-32936.jpg" class="card-img-top rounded-1" alt="..." >
+      <div class="card-body rounded"style="background-color:#87CEEB; margin-top: 10px;">
+        <h2>MARIA PEREZ</h2>
+        <p class="card-text">Como padre, la aplicación que cuida a mi hijo es una gran herramienta de confianza. Me permite programar citas médicas y recordatorios de vacunas, y puedo ver a mi hijo en tiempo real. </p>
+      </div>
+    </div>
+    <div class="card mx-auto my-auto border-0" style="width: 30rem;">
+      <img src="https://img.freepik.com/fotos-premium/hombre-joven-estudiante-sosteniendo-libros-sonriendo-levantando-pulgar_1187-22930.jpg" class="card-img-top rounded-1" alt="..." >
+      <div class="card-body rounded"style="background-color: #87CEEB;margin-top: 10px;" >
+        <h2>RAFAEL MARTINEZ</h2>
+        <p class="card-text" >Como cuidador, la aplicación es una gran herramienta para mi trabajo. . Me facilita la comunicacion con los padres y siento que es directa a través de la aplicación. Es una herramienta muy útil y confiable para mi trabajo.</p>
+      </div>
+    </div>
+  </div>
+ </div>
+</section>
+
+
+<section  id="CONTACTANOS">
 <footer>
   <div class="conteiner-fluid bg-dark  ">
     <div class="row">
@@ -89,6 +125,10 @@
     </div>
   </div>
 </footer>
+</section>
+
+ 
+
 
 
       <script>src= "https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"</script>
