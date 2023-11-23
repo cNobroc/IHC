@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Niñeras</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <style>
+        /* Estilos globales */
+        body {
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIpLOaJ1NoIKonrZJUvB9wntlCbt5YoQxIFA&usqp=CAU');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat; /* Evita que se repita el fondo */
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Estilos del encabezado */
+        header {
+            background-color: #ff8a65;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        h1 {
+            margin: 0;
+            color: #fff;
+            font-size: 1.8em;
+        }
+
+        #search-input {
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 20px;
+            border: none;
+            background-color: #fff;
+            width: 200px;
+        }
+
+        /* Estilos de los filtros */
+        .filter {
+            margin-bottom: 20px;
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        label {
+            font-weight: bold;
+            margin-bottom: 6px;
+            color: #555;
+            display: block;
+        }
+
+        select {
+            padding: 8px;
+            font-size: 14px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            width: 100%;
+            color: #555;
+        }
+
+        select:focus {
+            outline: none;
+            border-color: #ff8a65;
+        }
+
+        /* Estilos de los perfiles de niñeras */
+        .profile {
+            background-color: #fff;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile img {
+            width: 100px;
+            height: 100px;
+            margin-right: 20px;
+            border-radius: 50%;
+        }
+
+        h2 {
+            margin-top: 0;
+            color: #ff8a65;
+        }
+
+        p {
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        /* Estilos de las estrellas de calificación */
+     
+
+        .additional-filters {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+
+        .additional-filters label,
+        .additional-filters input[type="number"] {
+            display: block;
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+        .additional-filters input[type="number"] {
+            padding: 10px;
+            font-size: 14px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            width: 100%;
+            color: #555;
+        }
+
+        .additional-filters input[type="number"]:focus {
+            outline: none;
+            border-color: #ff8a65;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Niñeras</h1>
+        <input type="text" id="search-input" placeholder="Buscar niñera">
+    </header>
+    <main style="margin-top: 80px;">
+        <section id="filters">
+            <div class="filter">
+                <label for="availability">Disponibilidad:</label>
+                <select id="availability">
+                    <option value="all">Todas</option>
+                    <option value="available">Disponibles</option>
+                    <option value="not-available">No disponibles</option>
+                </select>
+            </div>
+        </section>
+        <!-- Nuevos filtros -->
+        <section class="additional-filters">
+            <h2>Filtros adicionales</h2>
+            <label for="experience">Años de experiencia:</label>
+            <input type="number" id="experience" min="0">
+            <label for="age">Edad:</label>
+            <input type="number" id="age" min="18">
+        </section>
+        <!-- Sección de perfiles de niñeras -->
+        <section id="profiles">
+            <!-- Generación de perfiles de ejemplo -->
+            <div class="profile">
+                <img src="ninera1.jpg" alt="Niñera 1">
+                <h2>María García</h2>
+                <p>Experiencia: 3 años</p>
+                <p>Edad: 23 años</p>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                
+              
+            </div>
+            
+             <div class="profile">
+                <img src="ninera2.jpg" alt="Niñera 2">
+                <h2>Carlos López</h2>
+                <p>Experiencia: 5 años</p>
+                <p>Edad: 35 años</p>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+             
+            </div>
+            
+            <div class="profile">
+                <img src="ninera3.jpg" alt="Niñera 3">
+                <h2>Ana Martínez</h2>
+                <p>Experiencia: 2 años</p>
+                <p>Edad: 24 años</p>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+            </div>
+            
+            <div class="profile">
+                <img src="ninera4.jpg" alt="Niñera 4">
+                <h2>Pablo Rodríguez</h2>
+                <p>Experiencia: 4 años</p>
+                <p>Edad: 30 años</p>
+                <i class="bi bi-star-fill"></i>
+               
+            </div>
+            
+            <div class="profile">
+                <img src="ninera5.jpg" alt="Niñera 5">
+                <h2>Laura Sánchez</h2>
+                <p>Experiencia: 1 año</p>
+                <p>Edad: 22 años</p>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+              
+            </div>
+            
+            <div class="profile">
+                <img src="ninera6.jpg" alt="Niñera 6">
+                <h2>Javier Pérez</h2>
+                <p>Experiencia: 6 años</p>
+                <p>Edad: 29 años</p>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+            
+        </section>
+    </main>
+    <script>src= "https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"</script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</html>
